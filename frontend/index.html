@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Recommendation</title>
+  <link rel="stylesheet" href="style.css">   <!-- connects the CSS file -->
+</head>
+<body>
+  <div class="card">
+    <h1>Crop Recommendation</h1>
+    <!-- each input has an id that equals the API field name -->
+    <label>Nitrogen (N) <input type="number" id="N"></label>
+    <label>Phosphorus (P) <input type="number" id="P"></label>
+    <label>Potassium (K) <input type="number" id="K"></label>
+    <label>Temperature (C) <input type="number" id="temperature" step="0.1"></label>
+    <label>Humidity (%) <input type="number" id="humidity" step="0.1"></label>
+    <label>pH (0 to 14) <input type="number" id="ph" step="0.1"></label>
+    <label>Rainfall (mm) <input type="number" id="rainfall" step="0.1"></label>
+    <button id="btn">Recommend crop</button>
+    <div id="result"></div>                  <!-- the answer is written here -->
+  </div>
+  <script src="script.js"></script>          <!-- loaded last so the elements already exist -->
+</body>
+</html>
