@@ -1,5 +1,6 @@
 # Crop Recommendation
 
+<<<<<<< HEAD
 A user types 7 soil and weather values on a web page. The page sends them to a FastAPI server, which runs a saved Random Forest model and returns the best crop and the top 3 choices.
 
 ## How it works
@@ -50,10 +51,19 @@ Open http://127.0.0.1:8000/ for the page and http://127.0.0.1:8000/docs to test 
 
 Request: `POST /predict`
 
+=======
+A machine learning web application that predicts the best crop to cultivate based on soil nutrients and climatic parameters.
+
+## The API contract
+Feature names and order, exactly (case sensitive): `N, P, K, temperature, humidity, ph, rainfall`.
+
+### Request POST /predict
+>>>>>>> 30f4fc06a892eb0f133e4cf61b0beeb3ce20e9e5
 ```json
 {"N": 90, "P": 42, "K": 43, "temperature": 20.8, "humidity": 82.0, "ph": 6.5, "rainfall": 202.9}
 ```
 
+<<<<<<< HEAD
 Response (200):
 
 ```json
@@ -84,3 +94,20 @@ Notes: _write what worked here after Day 9_
 ## Team
 
 A: data, KNN, SVM. B: Naive Bayes, Decision Tree, evaluation. C: Random Forest, tuning, saving. D: web app and deployment.
+=======
+### Response 200
+```json
+{
+  "crop": "rice",
+  "confidence": 0.97,
+  "top3": [
+    {"crop": "rice", "probability": 0.97},
+    {"crop": "jute", "probability": 0.02},
+    {"crop": "coffee", "probability": 0.01}
+  ]
+}
+```
+
+### Invalid Input
+Any value outside allowed boundaries (e.g., `ph = 20`) returns status **422 Unprocessable Entity**.
+>>>>>>> 30f4fc06a892eb0f133e4cf61b0beeb3ce20e9e5
