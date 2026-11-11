@@ -32,7 +32,7 @@ def tune_random_forest(X_train,y_train):
     grid.fit(X_train,y_train)
     print("Best parameters:",grid.best_params_)
     print("Best score:",grid.best_score_)
-    return grid.best_estimators_
+    return grid.best_estimator_
 
 def show_feature_importance(model):
     importance=zip(FEATURES,model.feature_importances_)
